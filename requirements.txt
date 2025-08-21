@@ -3,3 +3,4 @@ langchain-openai
 python-dotenv
 beautifulsoup4
 lxml
+pydantic-core

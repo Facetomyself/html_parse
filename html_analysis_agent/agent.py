@@ -214,7 +214,7 @@ class HTMLAnalysisAgent:
 
     def analyze_with_agent(self, query: str, html_content: str = "", thread_id: str = "default") -> str:
         """
-        使用LangGraph Agent进行智能分析
+        使用LangGraph Agent进行分析
 
         Args:
             query: 用户查询

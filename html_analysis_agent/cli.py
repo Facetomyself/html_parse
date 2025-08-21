@@ -15,7 +15,7 @@ from .utils import Utils
 def main():
     """主函数"""
     parser = argparse.ArgumentParser(
-        description='HTML Analysis Agent - 智能HTML解析和分析工具',
+        description='HTML Analysis Agent - 专业的HTML解析和分析工具',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 使用示例:

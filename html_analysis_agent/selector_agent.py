@@ -1,5 +1,5 @@
 """
-XPath和CSS选择器生成智能体
+XPath和CSS选择器生成器
 
 基于LangGraph框架，使用HTML简化技术来帮助生成XPath和CSS选择器
 """

@@ -24,7 +24,7 @@ def load_html_file(file_path):
 
 def demo_with_real_html():
     """使用真实HTML文件进行演示"""
-    print("🎯 HTML Analysis Agent 重构后功能演示")
+    print("HTML Analysis Agent 重构后功能演示")
     print("=" * 60)
 
     # 初始化Agent
@@ -44,11 +44,11 @@ def demo_with_real_html():
         file_path = Path('examples') / filename
 
         if not file_path.exists():
-            print(f"\n⚠️  文件 {filename} 不存在，跳过...")
+            print(f"\n警告: 文件 {filename} 不存在，跳过...")
             continue
 
         print(f"\n{'='*60}")
-        print(f"📄 分析产品: {product_name} ({filename})")
+        print(f"分析产品: {product_name} ({filename})")
         print('='*60)
 
         try:
@@ -74,8 +74,8 @@ def demo_with_real_html():
                 print(f"     {container_type}: {len(items)} 个")
             print(f"   文档ID: {container_result.get('doc_id', 'N/A')}")
 
-            # 4. 智能内容搜索
-            print("\n4. 智能内容搜索...")
+            # 4. 内容搜索
+            print("\n4. 内容搜索...")
             search_keywords = ['价格', '品牌', '评分', '评论']
             search_result = agent.search_html_content(html_content, search_keywords)
             print(f"   搜索关键词: {search_keywords}")
@@ -122,27 +122,27 @@ def demo_with_real_html():
             print(f"     文档ID: {position_result.get('doc_id', 'N/A')}")
 
         except Exception as e:
-            print(f"   ❌ 处理文件时出错: {e}")
+            print(f"   处理文件时出错: {e}")
             import traceback
             traceback.print_exc()
 
     print(f"\n{'='*60}")
-    print("🎉 演示完成！")
+    print("演示完成！")
     print("=" * 60)
 
     # 显示总结
-    print("\n📊 演示总结:")
-    print("   ✓ HTML简化技术 - 90%内容减少")
-    print("   ✓ 智能内容搜索 - 关键词快速定位")
-    print("   ✓ 数据容器分析 - 结构化信息提取")
-    print("   ✓ XPath/CSS查找 - 精确元素定位")
-    print("   ✓ 元素位置分析 - 层级结构理解")
-    print("   ✓ 结构化存储 - 高效数据管理")
+    print("\n演示总结:")
+    print("   HTML简化技术 - 90%内容减少")
+    print("   内容搜索 - 关键词快速定位")
+    print("   数据容器分析 - 结构化信息提取")
+    print("   XPath/CSS查找 - 精确元素定位")
+    print("   元素位置分析 - 层级结构理解")
+    print("   结构化存储 - 高效数据管理")
 
 
 def demo_html_simplification():
     """演示HTML简化功能"""
-    print("\n🔧 HTML简化功能单独演示")
+    print("\nHTML简化功能单独演示")
     print("=" * 40)
 
     from tools.html_simplifier import HTMLSimplifier
@@ -175,7 +175,7 @@ def demo_html_simplification():
 
 def demo_content_search():
     """演示内容搜索功能"""
-    print("\n🔍 内容搜索功能单独演示")
+    print("\n内容搜索功能单独演示")
     print("=" * 40)
 
     from tools.html_content_search import HTMLContentSearch

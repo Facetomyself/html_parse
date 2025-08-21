@@ -24,7 +24,7 @@ def load_html_file(file_path):
 
 def demo_advanced_search():
     """高级搜索功能演示"""
-    print("🔍 HTML Analysis Agent 高级搜索功能演示")
+    print("HTML Analysis Agent 高级搜索功能演示")
     print("=" * 60)
 
     # 初始化Agent
@@ -33,16 +33,16 @@ def demo_advanced_search():
     # 测试文件
     test_file = Path('examples/13_detail.html')
     if not test_file.exists():
-        print(f"❌ 测试文件 {test_file} 不存在")
+        print(f"错误: 测试文件 {test_file} 不存在")
         return
 
     # 加载HTML内容
     html_content = load_html_file(test_file)
-    print(f"📄 加载文件: {test_file.name}")
+    print(f"加载文件: {test_file.name}")
     print(f"   文件大小: {len(html_content):,} 字符")
 
     # 1. 关键词搜索
-    print("\n1. 🔑 关键词搜索")
+    print("\n1. 关键词搜索")
     print("-" * 30)
 
     keywords = ['白沙', '价格', '评分', '评论', 'button']
@@ -65,7 +65,7 @@ def demo_advanced_search():
             print(f"  {i+1}. {result.get('tag', 'unknown')} - {result.get('text_content', '')[:60]}...")
 
     # 2. XPath查找
-    print("\n\n2. 🛣️ XPath元素查找")
+    print("\n\n2. XPath元素查找")
     print("-" * 30)
 
     xpath_tests = [
@@ -89,7 +89,7 @@ def demo_advanced_search():
         print()
 
     # 3. CSS选择器查找
-    print("\n3. 🎨 CSS选择器元素查找")
+    print("\n3. CSS选择器元素查找")
     print("-" * 30)
 
     css_tests = [
@@ -113,7 +113,7 @@ def demo_advanced_search():
         print()
 
     # 4. 数据容器分析
-    print("\n4. 📦 数据容器分析")
+    print("\n4. 数据容器分析")
     print("-" * 30)
 
     container_result = agent.analyze_data_containers(html_content)
@@ -131,7 +131,7 @@ def demo_advanced_search():
                 print(f"  {i+1}. {item.get('tag', 'unknown')} - {item.get('text_content', '')[:60]}...")
 
     # 5. 元素位置分析
-    print("\n\n5. 📍 元素位置分析")
+    print("\n\n5. 元素位置分析")
     print("-" * 30)
 
     position_result = agent.analyze_element_positions(html_content)
@@ -147,7 +147,7 @@ def demo_advanced_search():
         print(f"    深度 {depth}: {count} 个元素")
 
     # 6. HTML简化分析
-    print("\n\n6. ⚡ HTML简化分析")
+    print("\n\n6. HTML简化分析")
     print("-" * 30)
 
     simplified_result = agent.analyze_html_with_simplification(html_content)
@@ -166,12 +166,12 @@ def demo_advanced_search():
     print(f"  简化后: {simplified_size:,} 字符")
     print(f"  压缩比例: {compression_ratio:.1f}%")
 
-    print(f"\n🎉 高级搜索演示完成！")
+    print(f"\n高级搜索演示完成！")
 
 
 def demo_multiple_files():
     """演示多文件处理"""
-    print("\n📚 多文件批量处理演示")
+    print("\n多文件批量处理演示")
     print("=" * 40)
 
     agent = HTMLAnalysisAgent()
@@ -188,10 +188,10 @@ def demo_multiple_files():
     for product_name, file_path in test_files:
         file_obj = Path(file_path)
         if not file_obj.exists():
-            print(f"⚠️ 跳过 {product_name}: 文件不存在")
+            print(f"警告: 跳过 {product_name}: 文件不存在")
             continue
 
-        print(f"\n📄 处理: {product_name}")
+        print(f"\n处理: {product_name}")
 
         try:
             html_content = load_html_file(file_path)
@@ -216,12 +216,12 @@ def demo_multiple_files():
             print(f"   搜索结果: {len(search_result.get('search_results', []))} 个")
 
         except Exception as e:
-            print(f"   ❌ 处理失败: {e}")
+            print(f"  处理失败: {e}")
 
     # 显示对比结果
     if results:
         print(f"\n{'='*40}")
-        print("📊 处理结果对比")
+        print("处理结果对比")
         print('='*40)
 
         for product_name, data in results.items():

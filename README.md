@@ -1,35 +1,35 @@
 # HTML Analysis Agent
 
-一个智能的HTML解析和分析工具，专门用于提取和分析网页中的关键元素和数据容器。
+一个专业的HTML解析和分析工具，专门用于提取和分析网页中的关键元素和数据容器。
 
 ## 功能特性
 
-### 🔄 核心重构特性（基于HTML简化技术）
+### 核心重构特性（基于HTML简化技术）
 
-- **🚀 HTML简化技术**：自动移除脚本、样式、图片等冗余内容，减少90%的上下文占用
-- **🔍 智能内容搜索**：支持关键词搜索，快速定位相关HTML元素和内容
-- **💾 结构化数据存储**：基于简化结构的高效数据存储和检索
-- **⚡ 高效元素定位**：无需读取完整HTML，基于索引的快速元素定位
+- **HTML简化技术**：自动移除脚本、样式、图片等冗余内容，减少90%的上下文占用
+- **内容搜索**：支持关键词搜索，快速定位相关HTML元素和内容
+- **结构化数据存储**：基于简化结构的高效数据存储和检索
+- **高效元素定位**：无需读取完整HTML，基于索引的快速元素定位
 
-### 📊 分析功能
+### 分析功能
 
 - HTML元素解析和XPath/CSS选择器生成
-- 智能数据容器识别和价值评估
+- 数据容器识别和价值评估
 - 元素位置关系分析
 - HTML内容变化检测
 - 结构化输出和报告生成
 
-### 🤖 智能功能
+### 核心功能
 
-- **智能选择器生成**：基于自然语言描述自动生成XPath和CSS选择器
+- **选择器生成**：基于自然语言描述自动生成XPath和CSS选择器
 - **批量元素处理**：支持一次处理多个元素的分析和定位
 - **变化检测**：基于简化结构的快速HTML变化检测
-- **LangGraph集成**：完整的智能代理工作流支持
+- **LangGraph集成**：完整的工作流支持
 
 ## 安装说明
 
 ### 1. 环境要求
-- Python 3.8+
+- Python 3.11
 - 虚拟环境（推荐）
 
 ### 2. 依赖安装
@@ -89,7 +89,7 @@ print("简化统计:", analysis_result['simplification_stats'])
 print("简化HTML:", analysis_result['simplified_html'][:500])
 ```
 
-#### 智能选择器生成
+#### 选择器生成
 ```python
 # 为指定元素生成XPath和CSS选择器
 result = agent.generate_selectors(html_content, "登录按钮")
@@ -103,7 +103,7 @@ element_info = agent.get_element_info(html_content, "//*[@id='login-btn']", "xpa
 print("元素信息:", element_info)
 ```
 
-### 🔍 新的搜索和查找功能
+### 新的搜索和查找功能
 
 #### HTML内容搜索
 ```python
@@ -126,7 +126,7 @@ css_result = agent.find_elements_by_css(html_content, "#login-btn")
 print("找到的元素:", css_result['found_elements'])
 ```
 
-## 📊 性能对比
+## 性能对比
 
 | 功能 | 传统方式 | 重构后方式 | 改进 |
 |------|----------|------------|------|
@@ -135,9 +135,9 @@ print("找到的元素:", css_result['found_elements'])
 | 内存使用 | 高 | 低 | **显著优化** |
 | 扩展性 | 差 | 优 | **大幅提升** |
 
-## 🎯 适用场景
+## 适用场景
 
-### 智能Web数据提取
+### Web数据提取
 - 电商产品信息抓取
 - 新闻文章内容提取
 - 社交媒体数据采集
@@ -155,7 +155,7 @@ print("找到的元素:", css_result['found_elements'])
 
 ### AI Agent集成
 - LangGraph工作流集成
-- 智能Web浏览助手
+- Web浏览助手
 - 自动化Web任务执行
 
 ## 项目结构
@@ -168,7 +168,7 @@ html_analysis_agent/
 ├── data_analyzer.py         # 数据容器分析功能
 ├── element_locator.py       # 元素定位功能
 ├── change_detector.py       # 变化检测功能
-├── selector_agent.py        # **新功能：XPath/CSS选择器生成智能体**
+├── selector_agent.py        # **新功能：XPath/CSS选择器生成器**
 └── utils.py                 # 工具函数
 ├── tools/
 │   ├── html_simplifier.py   # **新功能：HTML简化工具**
@@ -208,7 +208,7 @@ result = agent.parse_html(
 )
 ```
 
-## 🚀 快速开始
+## 快速开始
 
 ### 安装依赖
 ```bash
@@ -230,7 +230,7 @@ with open('webpage.html', 'r', encoding='utf-8') as f:
 result = agent.analyze_html_with_simplification(html_content)
 print(f"简化统计: {result['simplification_stats']}")
 
-# 智能搜索
+# 内容搜索
 search_results = agent.search_html_content(html_content, ["登录", "按钮"])
 print(f"找到 {len(search_results['search_results'])} 个匹配项")
 ```

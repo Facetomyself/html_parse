@@ -22,7 +22,7 @@ class DataAnalyzer:
 
     def analyze_data_containers(self, html_content: str) -> Dict[str, Any]:
         """
-        智能识别和分析HTML中的数据容器
+        识别和分析HTML中的数据容器
 
         Args:
             html_content: HTML内容

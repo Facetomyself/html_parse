@@ -11,7 +11,7 @@ try:
     with open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
         long_description = f.read()
 except FileNotFoundError:
-    long_description = "HTML Analysis Agent - 智能HTML解析和分析工具"
+    long_description = "HTML Analysis Agent - 专业的HTML解析和分析工具"
 
 # Read requirements
 def read_requirements(filename):
@@ -25,7 +25,7 @@ setup(
     version="1.0.0",
     author="HTML Analysis Agent Team",
     author_email="",
-    description="智能HTML解析和分析工具",
+    description="专业的HTML解析和分析工具",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/yourusername/html-analysis-agent",
