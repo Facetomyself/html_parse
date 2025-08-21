@@ -1,0 +1,5 @@
+langgraph==0.6.6
+langchain-openai
+python-dotenv
+beautifulsoup4
+lxml
