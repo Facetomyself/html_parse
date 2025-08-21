@@ -90,7 +90,51 @@ def main():
         if args.analysis in ['data_containers', 'all']:
             print("\n=== 数据容器分析 ===")
             data_result = agent.analyze_data_containers(html_content)
-            print(data_result)
+            print(f"文档ID: {data_result.get('doc_id', 'N/A')}")
+
+            containers = data_result.get('containers', {})
+
+            # 显示统计信息
+            print("\n发现数据容器类型:")
+            for container_type, items in containers.items():
+                print(f"  {container_type}: {len(items)} 个")
+
+            # 显示详细示例
+            print("\n数据容器详情:")
+            for container_type, items in containers.items():
+                if items and len(items) > 0:
+                    # 更友好的显示名称
+                    display_names = {
+                        'content_containers': '主要内容容器',
+                        'navigation_menus': '导航菜单',
+                        'data_tables': '数据表格',
+                        'form_elements': '表单元素',
+                        'media_containers': '媒体容器',
+                        'interactive_elements': '交互元素',
+                        'metadata_containers': '元数据容器',
+                        'list_structures': '列表结构',
+                        'decorative_elements': '装饰元素',
+                        'other': '其他元素'
+                    }
+                    friendly_name = display_names.get(container_type, container_type.upper())
+
+                    print(f"\n{friendly_name} ({len(items)} 个):")
+                    for i, item in enumerate(items[:3]):  # 每个类型最多显示3个
+                        print(f"  {i+1}. {item.get('description', '未描述')}")
+                        print(f"     标签: {item.get('tag', 'unknown')}")
+                        print(f"     重要性: {item.get('importance', 'unknown')}")
+                        content_type = item.get('content_type', '')
+                        if content_type:
+                            print(f"     内容类型: {content_type}")
+                        content_preview = item.get('content_preview', '')
+                        if content_preview:
+                            print(f"     内容预览: {content_preview[:80]}...")
+                        attributes = item.get('attributes', {})
+                        if attributes:
+                            attr_preview = ', '.join([f'{k}="{v}"' for k, v in list(attributes.items())[:2]])
+                            print(f"     属性: {attr_preview}")
+                        print()
+
             results.append(("数据容器分析", data_result))
 
         if args.analysis in ['element_positions', 'all']:
